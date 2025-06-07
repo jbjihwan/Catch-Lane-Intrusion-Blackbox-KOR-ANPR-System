@@ -34,17 +34,20 @@ The primary focus was not just on implementing individual features, but on build
 
 - **User Experience Features:**
   - Saves the final processed video with all annotations to an `.avi` file.
-  - Allows real-time playback speed control using keyboard arrow keys (↑, ↓).
   - Provides a safe exit mechanism using the `ESC` key.
 
 ## 3. Demonstration
 
 #### Example of a Running Screen
 
-This shows the program in action. You can see the detected lanes (green line), detected vehicles (green box), the tracked target vehicle (red box), the confirmed license plate (yellow text), and the plate view in the top-left corner.
+This shows the program in action. You can see the detected lanes (green line), lane intrusion ROI (thin purple box), detected vehicles (green box), the tracked target vehicle (red box), the confirmed license plate (yellow text), and the plate view in the top-left corner.
 
-![v11.py Output 1/2](output_v11_162313_D.gif)[v11.py Output 2/2](output_v11_163614_D.gif)
-
+<table>
+  <tr>
+    <td align="center"><img src="output_v11_162313_D.gif" alt="v11.py Output 1/2" width="auto" height="auto"></td>
+    <td align="center"><img src="output_v11_163614_D.gif" alt="v11.py Output 2/2" width="auto" height="auto"></td>
+  </tr>
+</table>
 
 #### Sample Log Output (`log.txt`)
 
@@ -127,7 +130,7 @@ This project was built upon the ideas and resources from the following open sour
   * **YOLOv5:** Ultralytics ([GitHub](https://github.com/ultralytics/yolov5))
   * **Korean License Plate Detector Model:** [sauce-git/korean-license-plate-detector](https://github.com/sauce-git/korean-license-plate-detector)
   * **EDSR Super-Resolution Model:** Bee Lim, Sanghyun Son et al. ([Paper](https://arxiv.org/abs/1707.02921))
-  - The pre-trained model file (`EDSR_x4.pb`) used in this project was obtained from the [Saafke/EDSR_Tensorflow](https://github.com/Saafke/EDSR_Tensorflow) repository, which is licensed under the **Apache License 2.0**. The full text of the license is included in this repository.
+  - The pre-trained model file (`EDSR_x4.pb`) used in this project was obtained from the [Saafke/EDSR_Tensorflow](https://github.com/Saafke/EDSR_Tensorflow) repository, which is licensed under the **Apache License 2.0**. The full text of the license is included in this repository.[Apache 2.0 License](LICENSE_of_EDSR_x4.txt)
 * **Libraries:**
   * **OpenCV:** https://opencv.org
   * **PyTorch:** https://pytorch.org
@@ -135,6 +138,27 @@ This project was built upon the ideas and resources from the following open sour
 * **AI Assistant:**
   * This project was developed in collaboration with AI Assistant **Google Gemini**. Gemini provided assistance with idea materialization, algorithm design, code debugging, implementation of advanced techniques (Super-Resolution, trackers, voting systems), and `README.md` generation.
 
-## 7. License
+## 7. Limitations & Future Work
+
+While this project successfully builds a system for detecting lane-intruding vehicles and recognizing their license plates, several areas for improvement remain to enhance its robustness against all real-world road variables and to achieve higher accuracy.
+In the future, I aim to address these challenges by implementing the methods detailed below, including the development of a lightweight AI model specifically for Korean license plate identification.
+
+#### 1. Physical Limitations of Low-Resolution & Long-Distance Plate Recognition
+- **Limitation:** The current system enhances the recognition rate of low-resolution plates through Super-Resolution and multi-frame analysis techniques. However, there is a fundamental limit to restoring license plates that are too far away in the original video to be identifiable.
+- **Future Work:** Consider using higher-resolution cameras or hardware with optical zoom capabilities. Alternatively, a confidence range could be set to only attempt recognition on vehicles within a certain distance.
+
+#### 2. Trade-off between Real-time Processing Speed and Accuracy
+- **Limitation:** The current system improves efficiency with a hybrid approach, using the CPU for vehicle detection and the GPU for license plate detection/recognition. However, executing all functions at peak performance on every single frame remains computationally expensive.
+- **Future Work:** A higher FPS could be achieved by introducing model quantization or pruning techniques. Furthermore, running the vehicle detection model with PyTorch/TensorRT instead of `cv2.dnn` would allow the entire pipeline to be processed on the GPU.
+
+#### 3. Generalization Performance for Diverse Environments
+- **Limitation:** The system's current parameters are tuned for the provided video data (daytime, clear weather). Performance may degrade under different lighting and weather conditions, such as at night, during rain, or in fog.
+- **Future Work:** This could be improved by acquiring additional data from diverse environments and implementing more robust preprocessing techniques (e.g., contrast enhancement specialized for night-time videos) or by creating a system to manage different parameter sets for each condition.
+
+#### 4. Advanced Tracking Algorithm
+- **Limitation:** The current CSRT tracker initiates a new search when it loses a target. It can be vulnerable to long-term occlusion scenarios, such as when a vehicle is completely hidden by another car.
+- **Future Work:** To improve stability, instead of simply resetting upon tracking failure, a more intelligent tracking logic could be implemented. Combining the tracker with a Kalman Filter to predict the vehicle's next position would allow the system to re-identify the same vehicle when it reappears.
+
+## 8. License
 
 This project is licensed under the [MIT License](LICENSE).
