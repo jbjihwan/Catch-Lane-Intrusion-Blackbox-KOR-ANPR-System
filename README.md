@@ -136,7 +136,7 @@ This project was built upon the ideas and resources from the following open sour
   * **YOLOv5:** Ultralytics ([GitHub](https://github.com/ultralytics/yolov5))
   * **Korean License Plate Detector Model:** [sauce-git/korean-license-plate-detector](https://github.com/sauce-git/korean-license-plate-detector)
   * **EDSR Super-Resolution Model:** Bee Lim, Sanghyun Son et al. ([Paper](https://arxiv.org/abs/1707.02921))
-  - The pre-trained model file (`EDSR_x4.pb`) used in this project was obtained from the [Saafke/EDSR_Tensorflow](https://github.com/Saafke/EDSR_Tensorflow) repository, which is licensed under the **Apache License 2.0**. The full text of the license is included in this repository.[Apache 2.0 License](LICENSE_of_EDSR_x4.txt)
+  - The pre-trained model file (`EDSR_x4.pb`) used in this project was obtained from the [Saafke/EDSR_Tensorflow](https://github.com/Saafke/EDSR_Tensorflow) repository, which is licensed under the **Apache License 2.0**. The full text of the license is included in this repository.[Apache 2.0 License](LICENSE_of_EDSR_x4)
 * **Libraries:**
   * **OpenCV:** https://opencv.org
   * **PyTorch:** https://pytorch.org
