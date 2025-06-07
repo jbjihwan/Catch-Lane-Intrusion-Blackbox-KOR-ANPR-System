@@ -44,6 +44,12 @@ This shows the program in action. You can see the detected lanes (green line), l
 
 <table>
   <tr>
+    <td align="center"><img src="162313_D_v11.png" alt="v11.py Output image 1/2" width="auto" height="auto"></td>
+    <td align="center"><img src="163614_D_v11.png" alt="v11.py Output image 2/2" width="auto" height="auto"></td>
+  </tr>
+</table>
+<table>
+  <tr>
     <td align="center"><img src="output_v11_162313_D.gif" alt="v11.py Output 1/2" width="auto" height="auto"></td>
     <td align="center"><img src="output_v11_163614_D.gif" alt="v11.py Output 2/2" width="auto" height="auto"></td>
   </tr>
