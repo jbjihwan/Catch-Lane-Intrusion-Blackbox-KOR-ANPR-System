@@ -124,7 +124,7 @@
 
 프로젝트 폴더에서 아래 명령어를 실행합니다.
 ```bash
-python your_script_name.py
+python do_catch_overliner_GPU_v11.py
 ```
 - `ESC` 키 또는 `q` 키를 누르면 프로그램이 안전하게 종료되고, 처리된 영상과 로그 파일이 생성됩니다.
 
