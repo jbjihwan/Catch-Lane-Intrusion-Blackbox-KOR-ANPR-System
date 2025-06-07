@@ -4,7 +4,7 @@
 
 </div>
 
-# 실시간 블랙박스 영상 분석을 통한 차선 이탈 차량 검출 및 번호판 인식 시스템
+# 실시간 블랙박스 영상 분석을 통한 차선 이탈 차량 식별별 및 번호판 인식 시스템
 
 ## 1. 프로젝트 개요 (Introduction)
 
@@ -42,6 +42,12 @@
 
 프로그램이 동작할 때의 모습입니다. 차선(녹색 선), 차선 내 영역(얇은 보라색 상자), 감지된 차량(초록색 상자), 추적 대상 차량(빨간색 상자), 확정된 번호판(노란색 텍스트), 그리고 좌측 상단의 번호판 디버그 뷰를 확인할 수 있습니다.
 
+<table>
+  <tr>
+    <td align="center"><img src="162313_D_v11.png" alt="v11.py Output image 1/2" width="auto" height="auto"></td>
+    <td align="center"><img src="163614_D_v11.png" alt="v11.py Output image 2/2" width="auto" height="auto"></td>
+  </tr>
+</table>
 <table>
   <tr>
     <td align="center"><img src="output_v11_162313_D.gif" alt="v11.py Output 1/2" width="auto" height="auto"></td>
