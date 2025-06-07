@@ -123,7 +123,7 @@ This project was tested in a **Python 3.10 virtual environment**.
 
 Execute the following command in your terminal from the project folder.
 ```bash
-python your_script_name.py
+do_catch_overliner_GPU_v11.py
 ```
 - Press the `ESC` or `q` key to exit the program safely. The processed video and log file will be generated.
 
