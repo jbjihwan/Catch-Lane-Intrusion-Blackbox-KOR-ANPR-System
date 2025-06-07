@@ -146,24 +146,36 @@ This project was built upon the ideas and resources from the following open sour
 
 ## 7. Limitations & Future Work
 
-While this project successfully builds a system for detecting lane-intruding vehicles and recognizing their license plates, several areas for improvement remain to enhance its robustness against all real-world road variables and to achieve higher accuracy.
-In the future, I aim to address these challenges by implementing the methods detailed below, including the development of a lightweight AI model specifically for Korean license plate identification.
+While this project successfully builds a system for detecting lane-intruding vehicles and recognizing their license plates, several areas for improvement remain to address all variables of a real-world road environment and to achieve higher accuracy.
+In the future, I aim to address these challenges by implementing the methods detailed below, as well as developing a lightweight AI model specifically for Korean license plate identification.
 
-#### 1. Physical Limitations of Low-Resolution & Long-Distance Plate Recognition
+### 7-1. General Areas for Improvement
+
+#### 7-1-1. Physical Limitations of Low-Resolution & Long-Distance Plate Recognition
 - **Limitation:** The current system enhances the recognition rate of low-resolution plates through Super-Resolution and multi-frame analysis techniques. However, there is a fundamental limit to restoring license plates that are too far away in the original video to be identifiable.
-- **Future Work:** Consider using higher-resolution cameras or hardware with optical zoom capabilities. Alternatively, a confidence range could be set to only attempt recognition on vehicles within a certain distance.
+- **Future Work:** I intend to consider using higher-resolution cameras or hardware with optical zoom capabilities, or setting a confidence range to only attempt recognition on vehicles within a certain distance.
 
-#### 2. Trade-off between Real-time Processing Speed and Accuracy
+#### 7-1-2. Trade-off between Real-time Processing Speed and Accuracy
 - **Limitation:** The current system improves efficiency with a hybrid approach, using the CPU for vehicle detection and the GPU for license plate detection/recognition. However, executing all functions at peak performance on every single frame remains computationally expensive.
-- **Future Work:** A higher FPS could be achieved by introducing model quantization or pruning techniques. Furthermore, running the vehicle detection model with PyTorch/TensorRT instead of `cv2.dnn` would allow the entire pipeline to be processed on the GPU.
+- **Future Work:** I believe a higher FPS could be achieved by introducing model quantization or pruning techniques, or by running the vehicle detection model with PyTorch/TensorRT instead of `cv2.dnn` to process the entire pipeline on the GPU.
 
-#### 3. Generalization Performance for Diverse Environments
+#### 7-1-3. Generalization Performance for Diverse Environments
 - **Limitation:** The system's current parameters are tuned for the provided video data (daytime, clear weather). Performance may degrade under different lighting and weather conditions, such as at night, during rain, or in fog.
-- **Future Work:** This could be improved by acquiring additional data from diverse environments and implementing more robust preprocessing techniques (e.g., contrast enhancement specialized for night-time videos) or by creating a system to manage different parameter sets for each condition.
+- **Future Work:** I am considering acquiring additional data from diverse environments and implementing more robust preprocessing techniques (e.g., contrast enhancement specialized for night-time videos), or developing a system to manage different parameter sets for each condition.
 
-#### 4. Advanced Tracking Algorithm
+#### 7-1-4. Advanced Tracking Algorithm
 - **Limitation:** The current CSRT tracker initiates a new search when it loses a target. It can be vulnerable to long-term occlusion scenarios, such as when a vehicle is completely hidden by another car.
-- **Future Work:** To improve stability, instead of simply resetting upon tracking failure, a more intelligent tracking logic could be implemented. Combining the tracker with a Kalman Filter to predict the vehicle's next position would allow the system to re-identify the same vehicle when it reappears.
+- **Future Work:** To improve stability, instead of simply resetting upon tracking failure, a more intelligent tracking logic could be implemented by combining the tracker with a Kalman Filter to predict the vehicle's next position and re-identify it after a temporary disappearance.
+
+### 7-2. Critiques of Specific Outputs
+
+#### 7-2-1. v11.py Output 1/2
+- **Limitation:** In the current result, the system only recognizes that the target vehicle has crossed the lane a certain amount of time after the lane change occurred.
+- **Future Work:** To enable faster intrusion detection, the criteria could be expanded to include the vehicle's entire bottom edge within the recognition scope, rather than just the center point of the bottom edge. However, this must be considered in conjunction with model lightening to manage the computational load.
+
+#### 7-2-2. v11.py Output 2/2
+- **Limitation:** It is not possible to identify the license plate number of the vehicle.
+- **Future Work:** It will be necessary to consider creating an upscaling and image enhancement model that exceeds EDSR_x4, or a process that can identify the plate by stacking the maximum possible number of frames.
 
 ## 8. License
 
