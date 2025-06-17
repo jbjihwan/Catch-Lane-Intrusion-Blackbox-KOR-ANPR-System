@@ -117,7 +117,7 @@
 3.  **모델 파일 다운로드:**
     아래 파일들을 다운로드하여 프로젝트 루트 디렉터리에 저장합니다.
     * **차량 식별 모델:** `yolov3-tiny.weights`, `yolov3-tiny.cfg`, `coco.names`
-    * **번호판 식별 모델:** `lp_det.pt` (또는 `best.pt`) - [sauce-git/korean-license-plate-detector](https://github.com/sauce-git/korean-license-plate-detector)
+    * **번호판 식별 모델:** `lp_det.pt` (또는 `best.pt`) - [sauce-git/EasyKoreanLpDetector](https://github.com/gyupro/EasyKoreanLpDetector) ( 또는 [sauce-git/korean-license-plate-detector](https://github.com/sauce-git/korean-license-plate-detector))
     * **초해상도 모델:** `EDSR_x4.pb` - [Saafke/EDSR_Tensorflow](https://github.com/Saafke/EDSR_Tensorflow/tree/master/models))
 
 #### 프로그램 실행
