@@ -116,7 +116,7 @@ This project was tested in a **Python 3.10 virtual environment**.
 3.  **Download Model Files:**
     Download the following files and place them in the project root directory.
     * **Vehicle Detector:** `yolov3-tiny.weights`, `yolov3-tiny.cfg`, `coco.names`
-    * **License Plate Detector:** `lp_det.pt` (or `best.pt`) - from a repository like [sauce-git/korean-license-plate-detector](https://github.com/sauce-git/korean-license-plate-detector)
+    * **License Plate Detector:** `lp_det.pt` (or `best.pt`) - from a repository like [sauce-git/EasyKoreanLpDetector](https://github.com/gyupro/EasyKoreanLpDetector) ( 또는 [sauce-git/korean-license-plate-detector](https://github.com/sauce-git/korean-license-plate-detector))
     * **Super-Resolution Model:** `EDSR_x4.pb` - (e.g., from [Saafke/EDSR_Tensorflow](https://github.com/Saafke/EDSR_Tensorflow/tree/master/models))
 
 #### Running the Script
@@ -134,7 +134,7 @@ This project was built upon the ideas and resources from the following open sour
 * **Models:**
   * **YOLOv3 / YOLOv3-tiny:** Joseph Redmon, Ali Farhadi ([Paper](https://pjreddie.com/darknet/yolo/))
   * **YOLOv5:** Ultralytics ([GitHub](https://github.com/ultralytics/yolov5))
-  * **Korean License Plate Detector Model:** [sauce-git/korean-license-plate-detector](https://github.com/sauce-git/korean-license-plate-detector)
+  * **Korean License Plate Detector Model:** [sauce-git/EasyKoreanLpDetector](https://github.com/gyupro/EasyKoreanLpDetector)
   * **EDSR Super-Resolution Model:** Bee Lim, Sanghyun Son et al. ([Paper](https://arxiv.org/abs/1707.02921))
   - The pre-trained model file (`EDSR_x4.pb`) used in this project was obtained from the [Saafke/EDSR_Tensorflow](https://github.com/Saafke/EDSR_Tensorflow) repository, which is licensed under the **Apache License 2.0**. The full text of the license is included in this repository.[Apache 2.0 License](LICENSE_of_EDSR_x4.txt)
 * **Libraries:**
