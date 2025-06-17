@@ -135,7 +135,7 @@ python do_catch_overliner_GPU_v11.py
 * **모델:**
   * **YOLOv3 / YOLOv3-tiny:** Joseph Redmon, Ali Farhadi ([Paper](https://pjreddie.com/darknet/yolo/))
   * **YOLOv5:** Ultralytics ([GitHub](https://github.com/ultralytics/yolov5))
-  * **Korean License Plate Detector Model:** [sauce-git/korean-license-plate-detector](https://github.com/sauce-git/korean-license-plate-detector)
+  * **Korean License Plate Detector Model:** [sauce-git/EasyKoreanLpDetector](https://github.com/gyupro/EasyKoreanLpDetector)
   * **EDSR Super-Resolution Model:** Bee Lim, Sanghyun Son et al. ([Paper](https://arxiv.org/abs/1707.02921))
   *   - The pre-trained model file (`EDSR_x4.pb`) used in this project was obtained from the [Saafke/EDSR_Tensorflow](https://github.com/Saafke/EDSR_Tensorflow) repository, 원본 리포지토리는 **Apache License 2.0**을 따릅니다. 라이선스 전체 내용은 현재 리포지토리 내에 포함되어 있습니다.[Apache 2.0 License](LICENSE_of_EDSR_x4.txt)
 * **라이브러리:**
